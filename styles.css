@@ -14,15 +14,14 @@ body {
 header {
   background-color: #9a9aff;
   color: white;
-  padding-top: 10px;
+  padding: 15px 0;
   min-height: 70px;
   border-bottom: #bbb 1px solid;
 }
 
 header h1 {
-  float: left;
-  margin: 0;
   font-size: 24px;
+  font-weight: 600;
 }
 
 header nav ul {
@@ -41,6 +40,36 @@ header nav ul li a {
   text-decoration: none;
   color: #fff;
   font-size: 18px;
+}
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #ddd;
+}
+/* Hamburger Menu (Hidden on Desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
 }
 
 .hero {
@@ -85,43 +114,92 @@ footer {
   color: #fff;
   text-align: center;
   padding: 10px 0;
-  position: fixed;
-  bottom: 0;
   width: 100%;
 }
 
 /* ... (previous styles) ... */
-
+/* Service Item Styling */
 .service-item {
   background-color: #fff;
-  border-radius: 20px;
-  padding: 20px;
+  border-radius: 16px;
+  padding: 30px;
   display: flex;
+  align-items: center;
   margin-bottom: 30px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Service Icon Styling */
 .service-icon img {
   width: 80px;
   height: 80px;
   margin-right: 20px;
   border-radius: 50%;
+  border: 2px solid #ddd;
+  background-color: #f9f9f9;
+  object-fit: cover;
 }
 
+/* Service Details Styling */
 .service-details h3 {
   font-size: 24px;
   margin: 0 0 10px;
+  color: #333;
+  font-weight: 500;
 }
 
+.service-details p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
 /* ... (rest of the styles) ... */
 .nav-container {
   width: 80%;
   margin: 0 auto;
-  overflow: hidden;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 463px;
+  overflow: hidden;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+  .service-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .service-icon img {
+    margin: 0 auto 15px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #9a9aff;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    display: none;
+    padding: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
