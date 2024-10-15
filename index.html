@@ -16,17 +16,22 @@
 <body>
     <header>
         <nav>
-            <div class="nav-container">
-                <h1 >Geekodroid</h1>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+          <div class="nav-container">
+            <h1>Geekodroid</h1>
+            <ul class="nav-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
+          </div>
         </nav>
-    </header>
+      </header>
 
     <section id="home" class="hero">
         <div class="x-container">
@@ -91,9 +96,17 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 Geekodroid. All rights reserved.</p>
+            <p>&copy; 2024 Geekodroid. All rights reserved.</p>
         </div>
     </footer>
 </body>
-
+<script>
+    // Hamburger menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+  
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </html>
